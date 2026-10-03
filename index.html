@@ -1,399 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quantact Partners — M. Umer Ijaz | Accounting &amp; Advisory</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quantact Partners | M. Umer Ijaz, Accounting &amp; Advisory</title>
   <meta name="description" content="Quantact Partners, led by M. Umer Ijaz, turns financial data into clear strategy. Accounting, assurance, tax and business advisory for ambitious businesses in Lahore and beyond.">
-  <meta name="theme-color" content="#1F2523">
+  <meta name="theme-color" content="#F6F5EF">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" type="image/png" href="assets/img/logo.png">
-  <link rel="apple-touch-icon" href="assets/img/logo.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23004B49'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='36' fill='%23F6F5EF'%3EQ%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
-  <!-- Loader -->
-  <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader__mark">
-      <img src="assets/img/logo.png" alt="" class="loader__logo">
-      <span class="loader__name">QUANTACT PARTNERS</span>
-      <span class="loader__line"><i></i></span>
-    </div>
-  </div>
-
-  <div class="grain" aria-hidden="true"></div>
-  <div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
-
-  <!-- Navigation -->
   <header class="nav" id="nav">
-    <div class="nav__inner">
-      <a href="#top" class="brand" aria-label="Quantact Partners home">
-        <img src="assets/img/logo.png" alt="" class="brand__mark">
-        <span class="brand__text">
-          <span class="brand__name">Quantact</span>
-          <span class="brand__sub">Partners</span>
-        </span>
+    <div class="container nav__inner">
+      <a href="#home" class="brand" aria-label="Quantact Partners, home">
+        <span class="brand__name">Quantact</span>
+        <span class="brand__sub">Partners</span>
       </a>
+
       <nav class="nav__links" aria-label="Primary">
-        <a href="#top" class="is-active">Home</a>
+        <a href="#home" class="is-active">Home</a>
         <a href="#services">Services</a>
         <a href="#insights">Insights</a>
         <a href="#about">About</a>
       </nav>
+
       <div class="nav__actions">
-        <a href="#contact" class="nav__text-link">Client Portal</a>
-        <a href="#contact" class="btn btn--outline btn--sm" data-magnetic>Get in Touch</a>
-        <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <a href="#contact" class="nav__portal">Client Portal</a>
+        <a href="#contact" class="btn btn--sm" data-magnetic>Get in Touch <i class="arrow"></i></a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
           <span></span><span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a href="#top">Home</a>
+  <nav class="menu" id="menu" aria-label="Mobile">
+    <a href="#home">Home</a>
     <a href="#services">Services</a>
     <a href="#insights">Insights</a>
     <a href="#about">About</a>
-    <a href="#contact">Get in Touch</a>
-  </div>
+    <a href="#contact">Client Portal</a>
+    <a href="#contact" class="btn">Get in Touch <i class="arrow"></i></a>
+  </nav>
 
-  <main id="top">
+  <main>
 
-    <!-- ============================ HERO ============================ -->
-    <section class="hero" id="hero">
-      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
-      <div class="hero__fade" aria-hidden="true"></div>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__grid-lines"></div>
+        <div class="orb orb--1"></div>
+        <div class="orb orb--2"></div>
+        <div class="orb orb--3"></div>
+        <canvas class="hero__silk" id="silk"></canvas>
+        <div class="hero__sweep"></div>
+        <div class="hero__vignette"></div>
+      </div>
 
-      <div class="container hero__grid">
+      <div class="container hero__layout">
         <div class="hero__copy">
-          <p class="eyebrow reveal" data-delay="0">Strategic accounting. Lasting impact.</p>
+          <p class="eyebrow rise" style="--d:.1s">Strategic accounting, lasting impact.</p>
           <h1 class="hero__title">
-            <span class="line"><span class="word">Numbers</span> <span class="word">you</span></span>
-            <span class="line"><span class="word">can</span> <span class="word">act</span> <span class="word">on.</span></span>
+            <span class="l"><span class="w" style="--d:.2s">Numbers</span> <span class="w" style="--d:.3s">you</span></span>
+            <span class="l"><span class="w" style="--d:.4s">can</span> <span class="w" style="--d:.5s">act</span> <span class="w" style="--d:.6s">on.</span></span>
           </h1>
-          <p class="hero__lead reveal" data-delay="500">
-            We turn your financial data into clear strategy,
-            so you can make confident decisions and
-            build what's next.
-          </p>
-          <div class="hero__cta reveal" data-delay="650">
-            <a href="#contact" class="btn btn--circle-text" data-magnetic>
-              <span class="btn__circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-              <span class="btn__label">Work with us</span>
-            </a>
-            <a href="#services" class="link-line">
-              <span>Our Services</span><i></i>
-            </a>
+          <p class="hero__lead rise" style="--d:.7s">We turn your financial data into clear strategy, so you can make confident decisions and build what's next.</p>
+          <div class="hero__actions rise" style="--d:.85s">
+            <a href="#contact" class="btn" data-magnetic>Work With Us <i class="arrow"></i></a>
+            <a href="#services" class="link-underline">Our Services</a>
+          </div>
+
+          <div class="hero__meter rise" style="--d:1.1s" aria-hidden="true">
+            <div class="meter">
+              <span class="meter__bar" style="--i:0"></span>
+              <span class="meter__bar" style="--i:1"></span>
+              <span class="meter__bar" style="--i:2"></span>
+            </div>
+            <p class="values">
+              <span class="values__item" style="--i:0">Trust</span><em>/</em>
+              <span class="values__item" style="--i:1">Precision</span><em>/</em>
+              <span class="values__item" style="--i:2">Partnership</span>
+            </p>
           </div>
         </div>
 
-        <!-- Glass dashboard -->
-        <div class="hero__visual reveal" data-delay="350">
-          <div class="beam" aria-hidden="true"></div>
-          <div class="dash tilt" id="dash">
-            <div class="dash__glow" aria-hidden="true"></div>
-            <aside class="dash__side">
-              <div class="dash__brand">
-                <img src="assets/img/logo.png" alt="">
-                <span>Quantact</span>
-              </div>
-              <ul>
-                <li class="is-active"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</li>
-                <li><svg viewBox="0 0 24 24"><path d="M6 3h9l5 5v13H6z"/><path d="M14 3v6h6"/></svg>Reports</li>
-                <li><svg viewBox="0 0 24 24"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg>Transactions</li>
-                <li><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>Documents</li>
-                <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>Settings</li>
-              </ul>
-            </aside>
-
-            <div class="dash__main">
-              <header class="dash__head">
-                <div>
-                  <h3>Financial Overview</h3>
-                  <span>Jan 2026 – May 2026</span>
-                </div>
-                <div class="dash__avatar"><span>UI</span></div>
+        <!-- Dashboard -->
+        <div class="dash rise" style="--d:.45s" aria-label="Sample financial dashboard">
+          <div class="dash__col dash__col--main">
+            <article class="panel panel--revenue float" style="--f:0s">
+              <header class="panel__head">
+                <small>Total Revenue</small>
+                <strong>$<span data-count="248650">0</span></strong>
+                <span class="delta delta--up"><i></i>12%</span>
               </header>
+              <svg class="chart" viewBox="0 0 300 110" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#004B49" stop-opacity=".16"/>
+                    <stop offset="1" stop-color="#004B49" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <g class="chart__rules">
+                  <line x1="0" y1="28" x2="300" y2="28"/>
+                  <line x1="0" y1="56" x2="300" y2="56"/>
+                  <line x1="0" y1="84" x2="300" y2="84"/>
+                </g>
+                <path class="chart__area" d="M10 86 L66 70 L122 78 L178 52 L234 44 L290 18 L290 110 L10 110 Z" fill="url(#areaFill)"/>
+                <path class="chart__line" pathLength="1" d="M10 86 L66 70 L122 78 L178 52 L234 44 L290 18"/>
+                <g class="chart__dots">
+                  <circle cx="10" cy="86" r="3.2" style="--i:0"/>
+                  <circle cx="66" cy="70" r="3.2" style="--i:1"/>
+                  <circle cx="122" cy="78" r="3.2" style="--i:2"/>
+                  <circle cx="178" cy="52" r="3.2" style="--i:3"/>
+                  <circle cx="234" cy="44" r="3.2" style="--i:4"/>
+                  <circle cx="290" cy="18" r="3.2" style="--i:5"/>
+                </g>
+              </svg>
+              <div class="chart__axis"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span></div>
+            </article>
 
-              <div class="dash__stats">
-                <div class="dash__stat">
-                  <small>Total Revenue</small>
-                  <strong>$<span data-count="248650" data-format="comma">0</span></strong>
-                  <em class="up">↑ 12.3% <span>vs. last quarter</span></em>
-                </div>
-                <div class="dash__stat">
-                  <small>Total Expenses</small>
-                  <strong>$<span data-count="96320" data-format="comma">0</span></strong>
-                  <em class="down">↓ 12.2% <span>vs. last quarter</span></em>
-                </div>
-                <div class="dash__stat">
-                  <small>Net Profit</small>
-                  <strong>$<span data-count="152330" data-format="comma">0</span></strong>
-                  <em class="up">↑ 14.7% <span>vs. last quarter</span></em>
-                </div>
-              </div>
-
-              <div class="dash__row">
-                <div class="dash__chart">
-                  <div class="dash__chart-head">
-                    <small>Profit Trend</small>
-                    <span class="dash__legend"><i></i>Net profit</span>
-                  </div>
-                  <svg viewBox="0 0 320 130" preserveAspectRatio="none" class="chart" id="chart" aria-hidden="true">
-                    <defs>
-                      <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0" stop-color="#B7C7A3" stop-opacity=".35"/>
-                        <stop offset="1" stop-color="#B7C7A3" stop-opacity="0"/>
-                      </linearGradient>
-                      <linearGradient id="chartStroke" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0" stop-color="#7fa39b"/>
-                        <stop offset="1" stop-color="#F6F5EF"/>
-                      </linearGradient>
-                      <filter id="chartGlow" x="-20%" y="-50%" width="140%" height="200%">
-                        <feGaussianBlur stdDeviation="3" result="b"/>
-                        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                      </filter>
-                    </defs>
-                    <g class="chart__grid">
-                      <line x1="0" y1="30" x2="320" y2="30"/>
-                      <line x1="0" y1="60" x2="320" y2="60"/>
-                      <line x1="0" y1="90" x2="320" y2="90"/>
-                    </g>
-                    <path class="chart__area" d="M0,118 C30,112 50,104 80,98 C110,92 125,100 150,78 C175,56 190,66 210,54 C230,42 245,50 270,34 C290,22 305,14 320,10 L320,130 L0,130 Z" fill="url(#chartFill)"/>
-                    <path class="chart__line" id="chartLine" d="M0,118 C30,112 50,104 80,98 C110,92 125,100 150,78 C175,56 190,66 210,54 C230,42 245,50 270,34 C290,22 305,14 320,10" fill="none" stroke="url(#chartStroke)" stroke-width="1.8" stroke-linecap="round" filter="url(#chartGlow)"/>
-                    <circle class="chart__dot" id="chartDot" r="3.2" fill="#F6F5EF"/>
-                    <circle class="chart__halo" id="chartHalo" r="9" fill="#B7C7A3" opacity=".25"/>
-                  </svg>
-                  <div class="chart__axis"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span></div>
-                </div>
-
-                <div class="dash__insights">
-                  <small>Key Insights</small>
-                  <ul>
-                    <li>Revenue increased by 13.5% compared to last quarter.</li>
-                    <li>Operating expenses are under budget by 8.2%.</li>
-                    <li>Net profit margin improved to 38.7%.</li>
-                  </ul>
-                  <a href="#insights" class="dash__link">View full report <span>→</span></a>
-                </div>
-              </div>
+            <div class="dash__row">
+              <article class="panel panel--mini float" style="--f:.8s">
+                <small>Cash Flow</small>
+                <strong>$<span data-count="53430">0</span></strong>
+                <span class="delta delta--up"><i></i>6%</span>
+              </article>
+              <article class="panel panel--mini float" style="--f:1.6s">
+                <small>Expenses</small>
+                <strong>$<span data-count="38120">0</span></strong>
+                <span class="delta delta--down"><i></i>3%</span>
+              </article>
+              <article class="panel panel--mini float" style="--f:2.4s">
+                <small>Growth</small>
+                <strong><span data-count="78">0</span>%</strong>
+                <span class="progress" aria-hidden="true"><i style="--w:78%"></i></span>
+              </article>
             </div>
+          </div>
+
+          <div class="dash__col dash__col--side">
+            <article class="panel panel--profit float" style="--f:.4s">
+              <small>Net Profit</small>
+              <strong>$<span data-count="96320">0</span></strong>
+              <span class="delta delta--up"><i></i>8%</span>
+              <svg class="spark" viewBox="0 0 120 56" preserveAspectRatio="none" aria-hidden="true">
+                <path class="spark__line" pathLength="1" d="M4 46 L24 38 L44 42 L64 30 L84 32 L104 16 L116 8"/>
+              </svg>
+            </article>
+
+            <form class="panel panel--calc float" id="calc" style="--f:1.2s" autocomplete="off">
+              <small class="panel__label">Quick Calculator</small>
+              <label class="field">
+                <span>Revenue</span>
+                <input type="text" inputmode="numeric" name="revenue" value="$250,000" aria-label="Revenue">
+              </label>
+              <label class="field">
+                <span>Expenses</span>
+                <input type="text" inputmode="numeric" name="expenses" value="$120,000" aria-label="Expenses">
+              </label>
+              <label class="field">
+                <span>Tax Rate</span>
+                <select name="rate" aria-label="Tax rate">
+                  <option value="15">15%</option>
+                  <option value="20">20%</option>
+                  <option value="25" selected>25%</option>
+                  <option value="30">30%</option>
+                  <option value="35">35%</option>
+                </select>
+              </label>
+              <button type="submit" class="btn btn--block">Calculate <i class="arrow"></i></button>
+              <div class="calc__result">
+                <small>Estimated Net Profit</small>
+                <strong>$<span id="calcOut">97,500</span></strong>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-
-      <div class="hero__scroll" aria-hidden="true"><span></span></div>
     </section>
 
-    <!-- ============================ SERVICES ============================ -->
-    <section class="services section" id="services">
-      <canvas class="scene scene--bottom" data-scene="water" aria-hidden="true"></canvas>
+    <!-- Services -->
+    <section class="section services" id="services">
+      <div class="glow glow--a" aria-hidden="true"></div>
+      <div class="glow glow--b" aria-hidden="true"></div>
       <div class="container">
-        <div class="section__head split">
+        <div class="section__head">
           <div>
             <p class="eyebrow reveal">Our Services</p>
-            <h2 class="title reveal" data-delay="80">Comprehensive<br>financial solutions<br>for modern businesses.</h2>
+            <h2 class="title reveal" style="--d:.1s">Comprehensive<br>financial solutions<br>for modern businesses.</h2>
           </div>
-          <div class="section__aside reveal" data-delay="160">
-            <p>From bookkeeping to strategic advisory, we provide the expertise and insight you need to grow, protect, and optimise your business.</p>
-            <a href="#contact" class="link-arrow">View all services <span>→</span></a>
+          <div class="section__aside reveal" style="--d:.2s">
+            <p>From bookkeeping to strategic advisory, we provide the expertise and insights you need to grow, protect, and optimize your business.</p>
+            <a href="#contact" class="link-arrow">View all services <i class="arrow"></i></a>
           </div>
         </div>
 
         <div class="cards">
-          <article class="glass card reveal" data-delay="0">
-            <span class="card__num">01</span>
-            <div class="card__icon"><svg viewBox="0 0 32 32"><path d="M6 25V15M13 25V9M20 25v-6M27 25V5"/><path d="M4 27h24"/></svg></div>
+          <article class="glass card reveal" style="--d:0s">
+            <span class="card__icon"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M5 23V14M12 23V7M19 23v-5M26 23V4" stroke-linecap="round"/><path d="M2 26h24" stroke-linecap="round"/></svg></span>
             <h3>Accounting &amp; Assurance</h3>
-            <p>Accurate reporting.<br>Greater confidence.</p>
-            <a href="#contact" class="card__link">Learn more <span>→</span></a>
+            <p>Accurate reporting. Greater confidence.</p>
+            <a href="#contact" class="card__link">Learn more <i class="arrow"></i></a>
           </article>
-          <article class="glass card reveal" data-delay="100">
-            <span class="card__num">02</span>
-            <div class="card__icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="m20 12-2.5 6.5L11 21l2.5-6.5z"/></svg></div>
+          <article class="glass card reveal" style="--d:.1s">
+            <span class="card__icon"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="11"/><path d="m18.5 9.5-2.6 6.4-6.4 2.6 2.6-6.4z" stroke-linejoin="round"/></svg></span>
             <h3>Tax Advisory</h3>
-            <p>Built for your today.<br>Ready for tomorrow.</p>
-            <a href="#contact" class="card__link">Learn more <span>→</span></a>
+            <p>Built for your today. Ready for tomorrow.</p>
+            <a href="#contact" class="card__link">Learn more <i class="arrow"></i></a>
           </article>
-          <article class="glass card reveal" data-delay="200">
-            <span class="card__num">03</span>
-            <div class="card__icon"><svg viewBox="0 0 32 32"><path d="M8 24c0-6 3-9 8-9s8 3 8 9"/><path d="M16 4v6M16 10a4 4 0 1 0 0 .01"/><path d="M5 27h22"/></svg></div>
+          <article class="glass card reveal" style="--d:.2s">
+            <span class="card__icon"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="9" r="5"/><path d="M4 25c0-5.5 4.5-9 10-9s10 3.5 10 9" stroke-linecap="round"/></svg></span>
             <h3>Business Advisory</h3>
-            <p>Smarter strategy.<br>Stronger outcomes.</p>
-            <a href="#contact" class="card__link">Learn more <span>→</span></a>
+            <p>Smarter strategy. Stronger outcomes.</p>
+            <a href="#contact" class="card__link">Learn more <i class="arrow"></i></a>
           </article>
-          <article class="glass card reveal" data-delay="300">
-            <span class="card__num">04</span>
-            <div class="card__icon"><svg viewBox="0 0 32 32"><rect x="4" y="9" width="18" height="12" rx="2"/><rect x="10" y="13" width="18" height="12" rx="2"/></svg></div>
+          <article class="glass card reveal" style="--d:.3s">
+            <span class="card__icon"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="3" y="3" width="15" height="15" rx="2"/><path d="M10 10h13v13H10z" stroke-linejoin="round"/></svg></span>
             <h3>Transaction Advisory</h3>
-            <p>Guidance for what's next.<br>Deal with confidence.</p>
-            <a href="#contact" class="card__link">Learn more <span>→</span></a>
+            <p>Guidance for what's next. Deal with confidence.</p>
+            <a href="#contact" class="card__link">Learn more <i class="arrow"></i></a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============================ STATS ============================ -->
-    <section class="stats" id="stats">
-      <canvas class="scene" data-scene="silk" aria-hidden="true"></canvas>
-      <div class="container stats__grid">
-        <div class="stats__copy">
+    <!-- Numbers + About -->
+    <section class="section about" id="about">
+      <div class="glow glow--c" aria-hidden="true"></div>
+      <div class="container about__layout">
+        <div class="numbers">
           <p class="eyebrow reveal">By the numbers</p>
-          <h2 class="title reveal" data-delay="80">Trusted by<br>ambitious businesses.</h2>
-        </div>
-        <ul class="stats__list">
-          <li class="reveal" data-delay="0"><strong><span data-count="200">0</span>+</strong><span>Active Clients</span></li>
-          <li class="reveal" data-delay="100"><strong><span data-count="12">0</span>+</strong><span>Years of Experience</span></li>
-          <li class="reveal" data-delay="200"><strong><span data-count="98">0</span>%</strong><span>Client Retention</span></li>
-          <li class="reveal" data-delay="300"><strong><span data-count="4.9" data-decimals="1">0</span>/5</strong><span>Client Satisfaction</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============================ ABOUT ============================ -->
-    <section class="about" id="about">
-      <div class="about__media reveal">
-        <canvas class="scene" data-scene="office" aria-hidden="true"></canvas>
-        <div class="about__media-frame" aria-hidden="true"><i></i><i></i><i></i></div>
-      </div>
-      <div class="about__body">
-        <div class="about__text">
-          <p class="eyebrow reveal">About Quantact</p>
-          <h2 class="title reveal" data-delay="80">More than accountants.<br>Long-term partners.</h2>
-          <p class="lead reveal" data-delay="160">Quantact Partners is a modern accounting practice led by M. Umer Ijaz, built for what's next. With a focus on clarity, precision, and partnership, we help you navigate complexity and unlock opportunity.</p>
-          <div class="about__principal reveal" data-delay="200">
-            <span class="about__sig">M. Umer Ijaz</span>
-            <small>Principal, Quantact Partners</small>
-          </div>
-          <a href="#contact" class="btn btn--outline reveal" data-delay="240" data-magnetic>Our Story <span>→</span></a>
-        </div>
-        <div class="about__mono reveal" data-delay="200">
-          <span class="mono"><img src="assets/img/logo.png" alt="Quantact Partners"></span>
-          <ul>
-            <li>Clarity</li>
-            <li>Precision</li>
-            <li>Partnership</li>
+          <h2 class="title reveal" style="--d:.1s">Trusted by<br>ambitious businesses.</h2>
+          <ul class="numbers__list">
+            <li class="reveal" style="--d:.15s"><strong><span data-count="200">0</span>+</strong><span>Active Clients</span></li>
+            <li class="reveal" style="--d:.25s"><strong><span data-count="12">0</span>+</strong><span>Years of Experience</span></li>
+            <li class="reveal" style="--d:.35s"><strong><span data-count="98">0</span>%</strong><span>Client Retention</span></li>
+            <li class="reveal" style="--d:.45s"><strong><span data-count="4.9" data-decimals="1">0</span>/5</strong><span>Client Satisfaction</span></li>
           </ul>
         </div>
+
+        <div class="story glass reveal" style="--d:.2s">
+          <div class="story__media" aria-hidden="true">
+            <div class="skyline">
+              <svg viewBox="0 0 320 420" preserveAspectRatio="xMidYMax slice">
+                <defs>
+                  <linearGradient id="skyFade" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#F6F5EF" stop-opacity="0"/>
+                    <stop offset="1" stop-color="#1F2523" stop-opacity=".55"/>
+                  </linearGradient>
+                </defs>
+                <g class="skyline__towers" fill="url(#skyFade)">
+                  <rect x="150" y="150" width="30" height="190"/>
+                  <rect x="186" y="110" width="22" height="230"/>
+                  <rect x="214" y="170" width="40" height="170"/>
+                  <rect x="260" y="140" width="26" height="200"/>
+                  <rect x="292" y="190" width="40" height="150"/>
+                  <rect x="110" y="200" width="32" height="140"/>
+                  <rect x="70" y="230" width="34" height="110"/>
+                  <rect x="196" y="78" width="4" height="34"/>
+                </g>
+                <rect class="skyline__floor" x="0" y="340" width="320" height="80" fill="#F6F5EF" fill-opacity=".55"/>
+              </svg>
+              <span class="skyline__pane"></span>
+              <span class="skyline__pane"></span>
+              <span class="skyline__pane"></span>
+              <span class="skyline__light"></span>
+            </div>
+          </div>
+          <div class="story__body">
+            <p class="eyebrow">About Quantact</p>
+            <h2 class="title title--sm">More than accountants. Long-term partners.</h2>
+            <p>We're a modern accounting firm built for what's next. Led by M. Umer Ijaz, with a focus on clarity, precision, and partnership, we help you navigate complexity and unlock opportunity.</p>
+            <div class="story__principal">
+              <span class="story__sig">M. Umer Ijaz</span>
+              <small>Principal, Quantact Partners</small>
+            </div>
+            <a href="#contact" class="btn" data-magnetic>Our Story <i class="arrow"></i></a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ============================ INSIGHTS ============================ -->
-    <section class="insights section" id="insights">
+    <!-- Insights -->
+    <section class="section insights" id="insights">
+      <div class="glow glow--d" aria-hidden="true"></div>
       <div class="container">
-        <div class="section__head split">
+        <hr class="rule reveal">
+        <div class="section__head">
           <div>
             <p class="eyebrow reveal">Insights</p>
-            <h2 class="title reveal" data-delay="80">Expert perspectives.<br>Real-world impact.</h2>
+            <h2 class="title reveal" style="--d:.1s">Expert perspectives.<br>Real-world impact.</h2>
           </div>
-          <div class="section__aside reveal" data-delay="160">
+          <div class="section__aside reveal" style="--d:.2s">
             <p>Stay informed with the latest insights, trends, and strategies to help you make better financial decisions.</p>
-            <a href="#insights" class="link-arrow">View all insights <span>→</span></a>
+            <a href="#insights" class="link-arrow">View all insights <i class="arrow"></i></a>
           </div>
         </div>
 
         <div class="posts">
-          <article class="post glass reveal" data-delay="0">
-            <div class="post__media"><canvas class="scene scene--still" data-scene="still-1" aria-hidden="true"></canvas><span class="tag">Tax</span></div>
+          <article class="post glass reveal" style="--d:0s">
+            <a href="#insights" class="post__media art art--desk" aria-hidden="true" tabindex="-1">
+              <span class="art__sheet"></span>
+              <span class="art__pen"></span>
+            </a>
             <div class="post__body">
-              <h3>Key Tax Changes for 2026 (and What They Mean for You)</h3>
-              <div class="post__meta"><span>Apr 28, 2026</span><span>5 min read</span><i>→</i></div>
+              <span class="tag">Tax</span>
+              <h3><a href="#insights">Key Tax Changes for 2025 (And What They Mean for You)</a></h3>
+              <div class="post__meta"><span>Apr 23, 2025</span><em>·</em><span>5 min read</span><i class="arrow"></i></div>
             </div>
           </article>
-          <article class="post glass reveal" data-delay="120">
-            <div class="post__media"><canvas class="scene scene--still" data-scene="still-2" aria-hidden="true"></canvas><span class="tag">Business</span></div>
+          <article class="post glass reveal" style="--d:.12s">
+            <a href="#insights" class="post__media art art--glass" aria-hidden="true" tabindex="-1">
+              <span class="art__pane"></span>
+              <span class="art__pane"></span>
+              <span class="art__pane"></span>
+              <span class="art__pane"></span>
+            </a>
             <div class="post__body">
-              <h3>The Value of Financial Forecasting in Uncertain Times</h3>
-              <div class="post__meta"><span>Apr 15, 2026</span><span>6 min read</span><i>→</i></div>
+              <span class="tag">Business</span>
+              <h3><a href="#insights">The Value of Financial Forecasting in Uncertain Times</a></h3>
+              <div class="post__meta"><span>Apr 16, 2025</span><em>·</em><span>6 min read</span><i class="arrow"></i></div>
             </div>
           </article>
-          <article class="post glass reveal" data-delay="240">
-            <div class="post__media"><canvas class="scene scene--still" data-scene="still-3" aria-hidden="true"></canvas><span class="tag">Advisory</span></div>
+          <article class="post glass reveal" style="--d:.24s">
+            <a href="#insights" class="post__media art art--sea" aria-hidden="true" tabindex="-1">
+              <svg viewBox="0 0 400 240" preserveAspectRatio="none">
+                <path class="wave" d="M0 60c60-30 120 30 180 0s120-30 220 10v170H0z" style="--i:0"/>
+                <path class="wave" d="M0 110c70-40 130 30 200 0s130-40 200 10v120H0z" style="--i:1"/>
+                <path class="wave" d="M0 160c60-30 130 25 200 0s140-30 200 10v70H0z" style="--i:2"/>
+                <path class="wave" d="M0 200c80-30 140 20 210 0s120-20 190 10v30H0z" style="--i:3"/>
+              </svg>
+            </a>
             <div class="post__body">
-              <h3>5 Signs It's Time to Rethink Your Business Structure</h3>
-              <div class="post__meta"><span>Apr 02, 2026</span><span>4 min read</span><i>→</i></div>
+              <span class="tag">Advisory</span>
+              <h3><a href="#insights">5 Signs It's Time to Rethink Your Business Structure</a></h3>
+              <div class="post__meta"><span>Apr 02, 2025</span><em>·</em><span>4 min read</span><i class="arrow"></i></div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============================ CTA ============================ -->
-    <section class="cta section" id="contact">
-      <div class="container">
-        <div class="cta__panel glass reveal">
-          <canvas class="scene" data-scene="smoke" aria-hidden="true"></canvas>
-          <div class="cta__content">
-            <div>
-              <p class="eyebrow">Let's talk</p>
-              <h2 class="title">Your goals. Our expertise.</h2>
-              <p class="lead">Get in touch with M. Umer Ijaz for a consultation and discover how we can help you move forward with confidence.</p>
-              <div class="cta__contacts">
-                <a href="mailto:mumeraijaz.writer@gmail.com">mumeraijaz.writer@gmail.com</a>
-                <a href="tel:+923364402552">+92 336 4402552</a>
-              </div>
-            </div>
-            <a href="mailto:mumeraijaz.writer@gmail.com" class="btn btn--solid" data-magnetic>Get in Touch <span>→</span></a>
+    <!-- Call to action -->
+    <section class="cta" id="contact">
+      <div class="cta__lines" aria-hidden="true">
+        <svg viewBox="0 0 800 400" preserveAspectRatio="none">
+          <path d="M520 420C640 300 720 240 840 120" />
+          <path d="M560 420C690 290 760 220 880 90" />
+          <path d="M610 420C730 300 800 230 920 110" />
+        </svg>
+      </div>
+      <div class="container cta__layout">
+        <div class="cta__copy">
+          <p class="eyebrow eyebrow--light reveal">Let's talk</p>
+          <h2 class="title reveal" style="--d:.1s">Your goals. Our expertise.</h2>
+          <p class="reveal" style="--d:.2s">Get in touch for a consultation with M. Umer Ijaz and discover how we can help you move forward with confidence.</p>
+          <div class="cta__contacts reveal" style="--d:.3s">
+            <a href="mailto:mumeraijaz.writer@gmail.com">mumeraijaz.writer@gmail.com</a>
+            <a href="tel:+923364402552">+92 336 4402552</a>
           </div>
         </div>
+        <a href="mailto:mumeraijaz.writer@gmail.com" class="btn btn--light btn--lg glass-dark reveal" style="--d:.25s" data-magnetic>Get In Touch <i class="arrow"></i></a>
       </div>
     </section>
 
   </main>
 
-  <!-- ============================ FOOTER ============================ -->
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a href="#top" class="brand">
-            <img src="assets/img/logo.png" alt="" class="brand__mark">
-            <span class="brand__text">
-              <span class="brand__name">Quantact</span>
-              <span class="brand__sub">Partners</span>
-            </span>
+          <a href="#home" class="brand">
+            <span class="brand__name">Quantact</span>
+            <span class="brand__sub">Partners</span>
           </a>
-          <p>Led by M. Umer Ijaz.<br>Accounting &amp; advisory for ambitious businesses.</p>
+          <p>Accounting &amp; advisory led by M. Umer Ijaz.</p>
         </div>
-        <div class="footer__col">
-          <h4>Navigation</h4>
-          <a href="#top">Home</a>
+
+        <nav class="footer__col" aria-label="Footer">
+          <a href="#home">Home</a>
           <a href="#services">Services</a>
           <a href="#insights">Insights</a>
           <a href="#about">About</a>
-        </div>
-        <div class="footer__col">
-          <h4>Services</h4>
-          <a href="#services">Accounting &amp; Assurance</a>
-          <a href="#services">Tax Advisory</a>
-          <a href="#services">Business Advisory</a>
-          <a href="#services">Transaction Advisory</a>
-        </div>
-        <div class="footer__col">
+        </nav>
+
+        <div class="footer__col footer__contact">
           <h4>Contact</h4>
-          <a href="mailto:mumeraijaz.writer@gmail.com">mumeraijaz.writer@gmail.com</a>
-          <a href="tel:+923364402552">+92 336 4402552</a>
-          <span>Lahore, Pakistan</span>
-          <div class="footer__social">
+          <a href="mailto:mumeraijaz.writer@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>mumeraijaz.writer@gmail.com</a>
+          <a href="tel:+923364402552"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke-linejoin="round"/></svg>+92 336 4402552</a>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Lahore, Pakistan</span>
+          <div class="social">
             <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg></a>
             <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M3 3l7.5 9.5L3.5 21h2.2l5.8-6.9 5.3 6.9H21l-7.8-10L19.7 3h-2.2l-5.3 6.3L7.3 3z"/></svg></a>
-            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" class="stroke"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor"/></svg></a>
           </div>
         </div>
-        <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M5 9h14M5 14h14"/></svg></button>
+
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <span></span>
+          <a href="#">Terms &amp; Conditions</a>
+        </div>
       </div>
+
       <div class="footer__bottom">
-        <span>© 2026 Quantact Partners · M. Umer Ijaz. All rights reserved.</span>
-        <div><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div>
+        <span>&copy; <span id="year">2025</span> Quantact Partners. All rights reserved.</span>
+        <p class="values values--static"><span>Trust</span><em>/</em><span>Precision</span><em>/</em><span>Partnership</span></p>
       </div>
     </div>
   </footer>
 
-  <script type="module" src="assets/js/scene.js"></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

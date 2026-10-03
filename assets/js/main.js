@@ -1,262 +1,219 @@
-/* =========================================================
-   Interface behaviour
-   loader · navigation · reveals · counters · chart · tilt
-   magnetic buttons · cursor · card spotlight
-   ========================================================= */
-
 (function () {
-  'use strict';
+  "use strict";
 
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  const $ = (sel, root = document) => root.querySelector(sel);
-  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
-  /* ------------------------------------------------ loader */
-  document.body.classList.add('is-loading');
-  const loader = $('#loader');
-  const heroTitle = $('.hero__title');
+  /* ---------- Navigation ---------- */
 
-  function finishLoading() {
-    loader.classList.add('is-done');
-    document.body.classList.remove('is-loading');
-    heroTitle && heroTitle.classList.add('is-in');
-    // hero reveals follow the headline
-    $$('.hero .reveal').forEach((el) => {
-      el.style.setProperty('--d', (parseInt(el.dataset.delay || 0, 10) + 300) + 'ms');
-      el.classList.add('is-in');
-    });
-    setTimeout(() => $('#chart') && $('#chart').classList.add('is-in'), 500);
-    setTimeout(startDashCounters, 900);
-  }
-
-  const minimum = reduced ? 0 : 1900;
-  const started = performance.now();
-  const ready = () => {
-    const wait = Math.max(0, minimum - (performance.now() - started));
-    setTimeout(finishLoading, wait);
-  };
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(ready);
-    setTimeout(ready, 3500); // safety net if fonts stall
-  } else {
-    window.addEventListener('load', ready);
-  }
-
-  /* -------------------------------------------- navigation */
-  const nav = $('#nav');
-  const burger = $('#burger');
-  const mobileMenu = $('#mobileMenu');
-  let lastY = window.scrollY;
+  var nav = $("#nav");
+  var burger = $("#burger");
+  var menu = $("#menu");
+  var links = $$(".nav__links a");
+  var sections = $$("main section[id]");
 
   function onScroll() {
-    const y = window.scrollY;
-    nav.classList.toggle('is-scrolled', y > 40);
-    if (y > 500 && y > lastY + 6 && !mobileMenu.classList.contains('is-open')) {
-      nav.classList.add('is-hidden');
-    } else if (y < lastY - 6 || y < 200) {
-      nav.classList.remove('is-hidden');
+    nav.classList.toggle("is-scrolled", window.scrollY > 24);
+    var y = window.scrollY + window.innerHeight * 0.35;
+    var current = sections[0];
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i].offsetTop <= y) current = sections[i];
     }
-    lastY = y;
+    var id = "#" + current.id;
+    links.forEach(function (a) {
+      a.classList.toggle("is-active", a.getAttribute("href") === id);
+    });
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  function toggleMenu(force) {
-    const open = typeof force === 'boolean' ? force : !mobileMenu.classList.contains('is-open');
-    mobileMenu.classList.toggle('is-open', open);
-    burger.classList.toggle('is-open', open);
-    burger.setAttribute('aria-expanded', String(open));
-    mobileMenu.setAttribute('aria-hidden', String(!open));
-    document.body.style.overflow = open ? 'hidden' : '';
+  function closeMenu() {
+    burger.classList.remove("is-open");
+    menu.classList.remove("is-open");
+    burger.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
   }
-  burger.addEventListener('click', () => toggleMenu());
-  $$('a', mobileMenu).forEach((a) => a.addEventListener('click', () => toggleMenu(false)));
-
-  // active link tracking
-  const sections = ['hero', 'services', 'insights', 'about'].map((id) => document.getElementById(id)).filter(Boolean);
-  const navLinks = $$('.nav__links a');
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (!e.isIntersecting) return;
-      const id = e.target.id === 'hero' ? 'top' : e.target.id;
-      navLinks.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === '#' + id));
-    });
-  }, { rootMargin: '-40% 0px -55% 0px' });
-  sections.forEach((s) => sectionObserver.observe(s));
-
-  $('#toTop') && $('#toTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' }));
-
-  /* ----------------------------------------------- reveals */
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (!e.isIntersecting) return;
-      const el = e.target;
-      el.style.setProperty('--d', (el.dataset.delay || 0) + 'ms');
-      el.classList.add('is-in');
-      revealObserver.unobserve(el);
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-  $$('.reveal').forEach((el) => {
-    if (el.closest('.hero')) return; // handled after the loader
-    revealObserver.observe(el);
+  burger.addEventListener("click", function () {
+    var open = !menu.classList.contains("is-open");
+    burger.classList.toggle("is-open", open);
+    menu.classList.toggle("is-open", open);
+    burger.setAttribute("aria-expanded", String(open));
+    document.body.style.overflow = open ? "hidden" : "";
   });
+  $$("a", menu).forEach(function (a) { a.addEventListener("click", closeMenu); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
 
-  /* ---------------------------------------------- counters */
-  const fmt = (v, el) => {
-    const dec = parseInt(el.dataset.decimals || 0, 10);
-    const n = dec ? v.toFixed(dec) : Math.round(v).toString();
-    return el.dataset.format === 'comma' ? n.replace(/\B(?=(\d{3})+(?!\d))/g, ',') : n;
-  };
-  const easeOut = (t) => 1 - Math.pow(1 - t, 4);
+  /* ---------- Scroll reveals & counters ---------- */
 
-  function countUp(el, duration = 2200) {
-    if (el.dataset.done) return;
-    el.dataset.done = '1';
-    const target = parseFloat(el.dataset.count);
-    if (reduced) { el.textContent = fmt(target, el); return; }
-    const t0 = performance.now();
-    const tick = (now) => {
-      const p = Math.min(1, (now - t0) / duration);
-      el.textContent = fmt(target * easeOut(p), el);
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
+  function formatNumber(n, decimals) {
+    var fixed = n.toFixed(decimals);
+    var parts = fixed.split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join(".");
   }
 
-  function startDashCounters() {
-    $$('.dash [data-count]').forEach((el, i) => setTimeout(() => countUp(el, 2000), i * 180));
-  }
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (!e.isIntersecting) return;
-      countUp(e.target, 2400);
-      counterObserver.unobserve(e.target);
-    });
-  }, { threshold: 0.5 });
-  $$('.stats [data-count]').forEach((el) => counterObserver.observe(el));
-
-  /* ------------------------------------------------- chart */
-  const chartLine = $('#chartLine');
-  const chartDot = $('#chartDot');
-  const chartHalo = $('#chartHalo');
-  if (chartLine && chartDot && !reduced) {
-    const len = chartLine.getTotalLength();
-    chartLine.style.strokeDasharray = len;
-    chartLine.style.strokeDashoffset = len;
-    let start = null;
-    const drawMs = 2600, delayMs = 400;
-    const chart = $('#chart');
-    function moveDot(now) {
-      if (!chart.classList.contains('is-in')) { requestAnimationFrame(moveDot); return; }
-      if (start === null) start = now + delayMs;
-      const p = Math.min(1, Math.max(0, (now - start) / drawMs));
-      // match the CSS ease-in-out used for the stroke
-      const eased = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
-      const pt = chartLine.getPointAtLength(len * eased);
-      chartDot.setAttribute('cx', pt.x); chartDot.setAttribute('cy', pt.y);
-      chartHalo.setAttribute('cx', pt.x); chartHalo.setAttribute('cy', pt.y);
-      if (p < 1) requestAnimationFrame(moveDot);
+  function countUp(el) {
+    var target = parseFloat(el.getAttribute("data-count"));
+    var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
+    if (reduceMotion) { el.textContent = formatNumber(target, decimals); return; }
+    var duration = 1600;
+    var start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 4);
+      el.textContent = formatNumber(target * eased, decimals);
+      if (p < 1) requestAnimationFrame(step);
     }
-    requestAnimationFrame(moveDot);
+    requestAnimationFrame(step);
   }
 
-  /* -------------------------------------------------- tilt */
-  const dash = $('#dash');
-  if (dash && finePointer && !reduced) {
-    const wrap = dash.parentElement;
-    let rx = 0, ry = 0, tx = 0, ty = 0, raf;
-    const update = () => {
-      rx += (tx - rx) * 0.08;
-      ry += (ty - ry) * 0.08;
-      dash.style.transform = `rotateX(${rx.toFixed(3)}deg) rotateY(${ry.toFixed(3)}deg)`;
-      if (Math.abs(tx - rx) > 0.01 || Math.abs(ty - ry) > 0.01) raf = requestAnimationFrame(update);
-      else raf = null;
+  var counted = [];
+  function runCounters(root) {
+    $$("[data-count]", root).forEach(function (el) {
+      if (counted.indexOf(el) !== -1) return;
+      counted.push(el);
+      countUp(el);
+    });
+  }
+
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        runCounters(entry.target);
+        io.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
+    $$(".reveal").forEach(function (el) { io.observe(el); });
+    $$(".numbers__list li").forEach(function (el) { io.observe(el); });
+  } else {
+    $$(".reveal").forEach(function (el) { el.classList.add("is-in"); });
+    runCounters(document);
+  }
+
+  // Hero dashboard figures start shortly after the panels rise in.
+  var dash = $(".dash");
+  if (dash) setTimeout(function () { runCounters(dash); }, reduceMotion ? 0 : 700);
+
+  /* ---------- Quick calculator ---------- */
+
+  var calc = $("#calc");
+  if (calc) {
+    var out = $("#calcOut");
+    var result = $(".calc__result", calc);
+    var money = function (input) {
+      var n = parseFloat(String(input.value).replace(/[^0-9.\-]/g, "")) || 0;
+      input.value = "$" + formatNumber(n, 0);
+      return n;
     };
-    const kick = () => { if (!raf) raf = requestAnimationFrame(update); };
-    wrap.addEventListener('pointermove', (e) => {
-      const r = dash.getBoundingClientRect();
-      const px = (e.clientX - r.left) / r.width - 0.5;
-      const py = (e.clientY - r.top) / r.height - 0.5;
-      tx = -py * 7; ty = px * 9;
-      kick();
-    });
-    wrap.addEventListener('pointerleave', () => { tx = 0; ty = 0; kick(); });
+    var compute = function () {
+      var revenue = money(calc.revenue);
+      var expenses = money(calc.expenses);
+      var rate = parseFloat(calc.rate.value) / 100;
+      var profit = revenue - expenses;
+      var net = profit > 0 ? profit * (1 - rate) : profit;
+      var sign = net < 0 ? "−" : "";
+      out.textContent = sign + formatNumber(Math.abs(net), 0);
+      result.classList.remove("is-updating");
+      void result.offsetWidth;
+      result.classList.add("is-updating");
+    };
+    calc.addEventListener("submit", function (e) { e.preventDefault(); compute(); });
+    $$("input", calc).forEach(function (i) { i.addEventListener("blur", function () { money(i); }); });
+    calc.rate.addEventListener("change", compute);
+    compute();
+    result.classList.remove("is-updating");
   }
 
-  /* --------------------------------------------- magnetic */
-  if (finePointer && !reduced) {
-    $$('[data-magnetic]').forEach((el) => {
-      let raf;
-      el.addEventListener('pointermove', (e) => {
-        const r = el.getBoundingClientRect();
-        const x = (e.clientX - r.left - r.width / 2) * 0.25;
-        const y = (e.clientY - r.top - r.height / 2) * 0.35;
-        cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(() => { el.style.transform = `translate(${x}px, ${y}px)`; });
-      });
-      el.addEventListener('pointerleave', () => {
-        cancelAnimationFrame(raf);
-        el.style.transform = '';
-      });
-    });
-  }
+  /* ---------- Pointer highlights (glass cards, buttons) ---------- */
 
-  /* ----------------------------------------------- cursor */
-  const cursor = $('#cursor');
-  if (cursor && finePointer && !reduced) {
-    let cx = window.innerWidth / 2, cy = window.innerHeight / 2, mx = cx, my = cy, shown = false;
-    window.addEventListener('pointermove', (e) => {
-      mx = e.clientX; my = e.clientY;
-      if (!shown) { shown = true; cursor.classList.add('is-visible'); cx = mx; cy = my; }
-    }, { passive: true });
-    document.addEventListener('pointerleave', () => cursor.classList.remove('is-visible'));
-    document.addEventListener('pointerenter', () => shown && cursor.classList.add('is-visible'));
-    const hoverables = 'a, button, [data-magnetic], .card, .post, .dash__stat';
-    document.addEventListener('pointerover', (e) => cursor.classList.toggle('is-hover', !!e.target.closest(hoverables)));
-    (function follow() {
-      cx += (mx - cx) * 0.18; cy += (my - cy) * 0.18;
-      cursor.style.translate = `${cx}px ${cy}px`;
-      requestAnimationFrame(follow);
-    })();
-  }
-
-  /* ------------------------------------------ card spotlight */
+  var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   if (finePointer) {
-    $$('.card').forEach((card) => {
-      card.addEventListener('pointermove', (e) => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
-        card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+    $$(".glass, .btn").forEach(function (el) {
+      el.addEventListener("pointermove", function (e) {
+        var r = el.getBoundingClientRect();
+        el.style.setProperty("--mx", (e.clientX - r.left) + "px");
+        el.style.setProperty("--my", (e.clientY - r.top) + "px");
       });
     });
+
+    if (!reduceMotion) {
+      $$("[data-magnetic]").forEach(function (el) {
+        var strength = 0.22;
+        el.addEventListener("pointermove", function (e) {
+          var r = el.getBoundingClientRect();
+          var x = e.clientX - (r.left + r.width / 2);
+          var y = e.clientY - (r.top + r.height / 2);
+          el.style.transform = "translate(" + x * strength + "px," + y * strength + "px)";
+        });
+        el.addEventListener("pointerleave", function () { el.style.transform = ""; });
+      });
+    }
   }
 
-  /* ------------------------------------ about media parallax */
-  const aboutMedia = $('.about__media');
-  const aboutScene = aboutMedia && $('.scene', aboutMedia);
-  if (aboutScene && !reduced) {
-    const parallax = () => {
-      const r = aboutMedia.getBoundingClientRect();
-      if (r.bottom < 0 || r.top > window.innerHeight) return;
-      const p = (r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight;
-      aboutScene.style.transform = `scale(1.12) translateY(${(p * -6).toFixed(2)}%)`;
-    };
-    window.addEventListener('scroll', parallax, { passive: true });
-    parallax();
+  /* ---------- Hero silk canvas ---------- */
+
+  var canvas = $("#silk");
+  if (canvas && !reduceMotion && canvas.getContext) {
+    var ctx = canvas.getContext("2d");
+    var w = 0, h = 0, t = 0, raf = 0, visible = true;
+    var LINES = 26;
+
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      w = canvas.clientWidth;
+      h = canvas.clientHeight;
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function draw() {
+      raf = 0;
+      if (!visible || document.hidden) return;
+      t += 0.0028;
+      ctx.clearRect(0, 0, w, h);
+      ctx.lineWidth = 1;
+      var step = w > 900 ? 18 : 24;
+      for (var i = 0; i < LINES; i++) {
+        var p = i / (LINES - 1);
+        var amp = h * (0.08 + p * 0.1);
+        var base = h * (0.22 + p * 0.62);
+        var alpha = 0.035 + (1 - Math.abs(p - 0.5) * 2) * 0.075;
+        ctx.strokeStyle = "rgba(0,75,73," + alpha.toFixed(3) + ")";
+        ctx.beginPath();
+        for (var x = -step; x <= w + step; x += step) {
+          var nx = x / w;
+          var y = base
+            + Math.sin(nx * 3.1 + t * 1.4 + p * 4.2) * amp * 0.55
+            + Math.sin(nx * 6.7 - t * 0.9 + p * 8.5) * amp * 0.22
+            + Math.cos(nx * 1.4 + t * 0.6 + p * 2.0) * amp * 0.4;
+          if (x === -step) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+      raf = requestAnimationFrame(draw);
+    }
+
+    function start() { if (!raf && visible && !document.hidden) raf = requestAnimationFrame(draw); }
+
+    resize();
+    window.addEventListener("resize", function () { resize(); start(); }, { passive: true });
+    document.addEventListener("visibilitychange", start);
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        visible = entries[0].isIntersecting;
+        start();
+      }, { threshold: 0 }).observe(canvas);
+    }
+    start();
   }
 
-  /* ---------------------------------- smooth anchor offset */
-  $$('a[href^="#"]').forEach((a) => {
-    a.addEventListener('click', (e) => {
-      const id = a.getAttribute('href');
-      if (id === '#' || id === '#top') { e.preventDefault(); window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' }); return; }
-      const target = document.querySelector(id);
-      if (!target) return;
-      e.preventDefault();
-      const top = target.getBoundingClientRect().top + window.scrollY - 72;
-      window.scrollTo({ top, behavior: reduced ? 'auto' : 'smooth' });
-    });
-  });
+  /* ---------- Footer year ---------- */
+
+  var year = $("#year");
+  if (year) year.textContent = String(new Date().getFullYear());
 })();

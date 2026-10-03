@@ -1,29 +1,21 @@
 # Quantact Partners — M. Umer Ijaz
 
-Single-page portfolio site for an accounting and advisory practice.
-Glassmorphism interface over live WebGL backdrops built with Three.js.
+Single-page site for an accounting and advisory practice. Plain HTML, CSS and a small script: no frameworks, no build step, no image downloads. The hero backdrop is layered CSS gradients plus a lightweight 2D canvas; everything else is glass surfaces over soft colour fields.
 
 ## Run locally
 
-Any static server works. For example:
+Open `index.html` directly, or serve the folder with any static server:
 
 ```sh
 python3 -m http.server 8000
 ```
 
-Then open <http://localhost:8000>.
-
-The scenes are loaded as an ES module, so the page must be served over HTTP rather than opened from the file system.
-
 ## Structure
 
 ```
 index.html            page markup
-assets/css/style.css  design system, layout, animations
-assets/js/scene.js    Three.js shader scenes (hero, water, silk, office, smoke, stills)
-assets/js/main.js     loader, navigation, reveals, counters, chart, tilt, cursor
-assets/img/logo.png   brand mark
-assets/vendor/        Three.js (MIT)
+assets/css/style.css  design tokens, layout, animations, responsive rules
+assets/js/main.js     navigation, scroll reveals, counters, calculator, hero canvas
 ```
 
 ## Palette
@@ -37,4 +29,4 @@ assets/vendor/        Three.js (MIT)
 
 ## Contact details
 
-Edit the email, phone and location in `index.html` (search for `mumeraijaz` and `+92 336`).
+Edit the email and phone in `index.html` (search for `mumeraijaz` and `+92 336`).
