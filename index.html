@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantact Partners — UK accounting, tax &amp; VAT for growing businesses. Led by M. Umer Aijaz.</title>
+  <meta name="description" content="Quantact Partners — UK accounting, tax &amp; VAT for growing businesses. Led by M. Umer Aijaz.">
+  <link rel="canonical" href="https://www.quantactpartners.co.uk/">
+  <meta property="og:title" content="Quantact Partners — UK accounting, tax &amp; VAT for growing businesses">
+  <meta property="og:description" content="Limited company accounts, CT600s, VAT bookkeeping, personal tax and more. Led by M. Umer Aijaz.">
+  <meta property="og:image" content="https://www.quantactpartners.co.uk/assets/img/case-ecommerce-vat.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#1F2523">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="apple-touch-icon" href="assets/img/logo.png">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__mark">
+      <img src="assets/img/logo.png" alt="" class="loader__logo">
+      <span class="loader__name">QUANTACT PARTNERS</span>
+      <span class="loader__line"><i></i></span>
+    </div>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="brand" aria-label="Quantact Partners home">
+        <img src="assets/img/logo.png" alt="" class="brand__mark">
+        <span class="brand__text">
+          <span class="brand__name">Quantact</span>
+          <span class="brand__sub">Partners</span>
+        </span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#top" class="is-active">Home</a>
+        <a href="#services">Services</a>
+        <a href="#calculators">Calculators</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="#contact" class="btn btn--outline btn--sm" data-magnetic>Discuss your accounting needs</a>
+        <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#top">Home</a>
+    <a href="#services">Services</a>
+    <a href="#calculators">Calculators</a>
+    <a href="#case-studies">Case Studies</a>
+    <a href="#about">About</a>
+    <a href="#contact">Discuss your accounting needs</a>
+    <ul class="mobile-menu__services" aria-label="Services">
+      <li><a href="#detail-limited-company-accounts" data-detail="detail-limited-company-accounts">Limited Company Accounts &amp; CT600s</a></li>
+      <li><a href="#detail-management-accounts" data-detail="detail-management-accounts">Management Accounts &amp; Reporting</a></li>
+      <li><a href="#detail-tax-compliance" data-detail="detail-tax-compliance">Tax Compliance &amp; Advisory</a></li>
+      <li><a href="#detail-vat-bookkeeping" data-detail="detail-vat-bookkeeping">VAT Bookkeeping</a></li>
+      <li><a href="#detail-personal-tax" data-detail="detail-personal-tax">Personal Tax Returns</a></li>
+      <li><a href="#detail-sole-trader-partnership-llp" data-detail="detail-sole-trader-partnership-llp">Sole Trader, Partnership &amp; LLP Accounts</a></li>
+      <li><a href="#detail-data-migration" data-detail="detail-data-migration">Data Migration</a></li>
+      <li><a href="#detail-cis-returns" data-detail="detail-cis-returns">CIS Returns</a></li>
+    </ul>
+  </div>
+
+  <main id="top">
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" id="hero">
+      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero__fade" aria-hidden="true"></div>
+
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow reveal" data-delay="0">Strategic accounting. Lasting impact.</p>
+          <h1 class="hero__title">
+            <span class="line"><span class="word">Numbers</span> <span class="word">you</span></span>
+            <span class="line"><span class="word">can</span> <span class="word">act</span> <span class="word">on.</span></span>
+          </h1>
+          <p class="hero__lead reveal" data-delay="500">
+            UK accounting, tax and VAT handled properly, explained
+            clearly, and delivered on time, so you can make confident
+            decisions and build what's next.
+          </p>
+          <div class="hero__cta reveal" data-delay="650">
+            <a href="#contact" class="btn btn--circle-text" data-magnetic>
+              <span class="btn__circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <span class="btn__label">Discuss your accounting needs</span>
+            </a>
+            <a href="#services" class="link-line">
+              <span>Our Services</span><i></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Glass dashboard -->
+        <div class="hero__visual reveal" data-delay="350">
+          <div class="beam" aria-hidden="true"></div>
+          <div class="dash tilt" id="dash">
+            <div class="dash__glow" aria-hidden="true"></div>
+            <aside class="dash__side">
+              <div class="dash__brand">
+                <img src="assets/img/logo.png" alt="">
+                <span>Quantact</span>
+              </div>
+              <ul>
+                <li class="is-active"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</li>
+                <li><svg viewBox="0 0 24 24"><path d="M6 3h9l5 5v13H6z"/><path d="M14 3v6h6"/></svg>Reports</li>
+                <li><svg viewBox="0 0 24 24"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg>Transactions</li>
+                <li><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>Documents</li>
+                <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>Settings</li>
+              </ul>
+            </aside>
+
+            <div class="dash__main">
+              <header class="dash__head">
+                <div>
+                  <p class="dash__title">Financial Overview</p>
+                  <span>Jan 2026 – May 2026</span>
+                </div>
+                <div class="dash__avatar"><span>UA</span></div>
+              </header>
+
+              <div class="dash__stats">
+                <div class="dash__stat">
+                  <small>Total Revenue <button type="button" class="tip" aria-label="Definition of total revenue" data-tip="Sales invoiced in the period, excluding VAT.">i</button></small>
+                  <strong>£<span data-count="186400" data-format="comma">0</span></strong>
+                  <em class="up">↑ 12.3% <span>vs. previous period</span></em>
+                </div>
+                <div class="dash__stat">
+                  <small>Total Expenses <button type="button" class="tip" aria-label="Definition of total expenses" data-tip="Operating costs incurred in the period, excluding VAT.">i</button></small>
+                  <strong>£<span data-count="72250" data-format="comma">0</span></strong>
+                  <em class="down">↓ 6.8% <span>vs. previous period</span></em>
+                </div>
+                <div class="dash__stat">
+                  <small>Net Profit <button type="button" class="tip" aria-label="Definition of net profit" data-tip="Revenue less expenses, before corporation tax.">i</button></small>
+                  <strong>£<span data-count="114150" data-format="comma">0</span></strong>
+                  <em class="up">↑ 18.4% <span>vs. previous period</span></em>
+                </div>
+              </div>
+
+              <div class="dash__row">
+                <div class="dash__chart">
+                  <div class="dash__chart-head">
+                    <small id="chartLabel">Profit / Loss · Jan–May 2026</small>
+                    <div class="dash__tabs" role="tablist" aria-label="Chart series">
+                      <button type="button" role="tab" data-series="revenue" aria-selected="false">Revenue</button>
+                      <button type="button" role="tab" data-series="expenses" aria-selected="false">Expenses</button>
+                      <button type="button" role="tab" data-series="profit" aria-selected="true" class="is-active">Profit/Loss</button>
+                      <button type="button" role="tab" data-series="cashflow" aria-selected="false">Cash flow</button>
+                    </div>
+                  </div>
+                  <svg viewBox="0 0 320 130" preserveAspectRatio="none" class="chart" id="chart" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#B7C7A3" stop-opacity=".35"/>
+                        <stop offset="1" stop-color="#B7C7A3" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="chartStroke" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="#7fa39b"/>
+                        <stop offset="1" stop-color="#F6F5EF"/>
+                      </linearGradient>
+                      <filter id="chartGlow" x="-20%" y="-50%" width="140%" height="200%">
+                        <feGaussianBlur stdDeviation="3" result="b"/>
+                        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                      </filter>
+                    </defs>
+                    <g class="chart__grid">
+                      <line x1="0" y1="30" x2="320" y2="30"/>
+                      <line x1="0" y1="60" x2="320" y2="60"/>
+                      <line x1="0" y1="90" x2="320" y2="90"/>
+                    </g>
+                    <path class="chart__area" d="M0,118 C30,112 50,104 80,98 C110,92 125,100 150,78 C175,56 190,66 210,54 C230,42 245,50 270,34 C290,22 305,14 320,10 L320,130 L0,130 Z" fill="url(#chartFill)"/>
+                    <path class="chart__line" id="chartLine" d="M0,118 C30,112 50,104 80,98 C110,92 125,100 150,78 C175,56 190,66 210,54 C230,42 245,50 270,34 C290,22 305,14 320,10" fill="none" stroke="url(#chartStroke)" stroke-width="1.8" stroke-linecap="round" filter="url(#chartGlow)"/>
+                    <circle class="chart__dot" id="chartDot" r="3.2" fill="#F6F5EF"/>
+                    <circle class="chart__halo" id="chartHalo" r="9" fill="#B7C7A3" opacity=".25"/>
+                  </svg>
+                  <div class="chart__axis"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span></div>
+                  <p class="dash__defs" id="chartDef">Revenue less expenses for each month, before corporation tax.</p>
+                </div>
+
+                <div class="dash__insights">
+                  <small>Key Insights <span class="dash__sample">Sample text</span></small>
+                  <ul>
+                    <li>Revenue is ahead of the previous period, driven by repeat customers.</li>
+                    <li>Operating expenses are tracking under the agreed budget.</li>
+                    <li>Net profit margin has improved on the previous period.</li>
+                  </ul>
+                  <a href="#case-studies" class="dash__link">View case studies <span>→</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="dash__caption">Illustrative demo data — not client figures.</p>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- ============================ SERVICES ============================ -->
+    <section class="services section" id="services">
+      <canvas class="scene scene--bottom" data-scene="water" aria-hidden="true"></canvas>
+      <div class="container">
+        <div class="section__head split">
+          <div>
+            <p class="eyebrow reveal">Our Services</p>
+            <h2 class="title reveal" data-delay="80">Accounting, tax and VAT<br>for growing UK businesses.</h2>
+          </div>
+          <div class="section__aside reveal" data-delay="160">
+            <p>From VAT bookkeeping to year-end accounts and corporation tax, we handle the compliance properly and explain what the numbers mean.</p>
+            <a href="#service-details" class="link-arrow">Service details <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="cards cards--eight">
+          <article class="glass card reveal" data-delay="0">
+            <span class="card__num">01</span>
+            <div class="card__icon"><svg viewBox="0 0 32 32"><path d="M7 27V9l9-5 9 5v18"/><path d="M4 27h24M12 27v-7h8v7M13 13h6"/></svg></div>
+            <h3>Limited Company Accounts &amp; CT600s</h3>
+            <p>Year-end statutory accounts and corporation tax returns filed to Companies House and HMRC.</p>
+            <a href="#detail-limited-company-accounts" class="card__link" data-detail="detail-limited-company-accounts">Learn more <span>→</span></a>
+          </article>
+          <article class="glass card reveal" data-delay="100">
+            <span class="card__num">02</span>
+            <div class="card__icon"><svg viewBox="0 0 32 32"><path d="M6 25V15M13 25V9M20 25v-6M27 25V5"/><path d="M4 27h24"/></svg></div>
+            <h3>Management Accounts &amp; Reporting</h3>
+            <p>Monthly or quarterly management accounts, KPIs and commentary you can act on.</p>
+            <a href="#detail-management-accounts" class="card__link" data-detail="detail-management-accounts">Learn more <span>→</span></a>
+          </article>
+          <article class="glass card reveal" data-delay="200">
+            <span class="card__num">03</span>
+            <div class="card__icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="m20 12-2.5 6.5L11 21l2.5-6.5z"/></svg></div>
+            <h3>Tax Compliance &amp; Advisory</h3>
+            <p>Filings that are correct and on time, with planning advice when it matters.</p>
+            <a href="#detail-tax-compliance" class="card__link" data-detail="detail-tax-compliance">Learn more <span>→</span></a>
+          </article>
+          <article class="glass card reveal" data-delay="300">
+            <span class="card__num">04</span>
+            <div class="card__icon"><svg viewBox="0 0 32 32"><rect x="5" y="4" width="22" height="24" rx="2"/><path d="M10 10h12M10 15h12M10 20h7"/></svg></div>
+            <h3>VAT Bookkeeping</h3>
+            <p>VAT-compliant bookkeeping and VAT returns submitted under Making Tax Digital.</p>
+            <a href="#detail-vat-bookkeeping" class="card__link" data-detail="detail-vat-bookkeeping">Learn more <span>→</span></a>
+          </article>
+          <article class="glass card reveal" data-delay="0">
+            <span class="card__num">05</span>
+            <div class="card__icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="11" r="5"/><path d="M6 27c0-5.5 4.5-9 10-9s10 3.5 10 9"/></svg></div>
+            <h3>Personal Tax Returns</h3>
+            <p>Self Assessment for directors, landlords and sole traders.</p>
+            <a href="#detail-personal-tax" class="card__link" data-detail="detail-personal-tax">Learn more <span>→</span></a>
+          </article>
+          <article class="glass card reveal" data-delay="100">
+            <span class="card__num">06</span>
+            <div class="card__icon"><svg viewBox="0 0 32 32"><circle cx="11" cy="12" r="4"/><circle cx="21" cy="12" r="4"/><path d="M4 26c0-4 3-7 7-7s7 3 7 7M14 26c0-4 3-7 7-7s7 3 7 7"/></svg></div>
+            <h3>Sole Trader, Partnership &amp; LLP Accounts</h3>
+            <p>Accounts and tax for unincorporated businesses and LLPs.</p>
+            <a href="#detail-sole-trader-partnership-llp" class="card__link" data-detail="detail-sole-trader-partnership-llp">Learn more <span>→</span></a>
+          </article>
+          <article class="glass card reveal" data-delay="200">
+            <span class="card__num">07</span>
+            <div class="card__icon"><svg viewBox="0 0 32 32"><path d="M5 10h18l-4-4M27 22H9l4 4"/><rect x="4" y="14" width="24" height="4" rx="1"/></svg></div>
+            <h3>Data Migration</h3>
+            <p>Moving your books between Xero, QuickBooks Online, Sage and spreadsheets, with reconciled opening balances.</p>
+            <a href="#detail-data-migration" class="card__link" data-detail="detail-data-migration">Learn more <span>→</span></a>
+          </article>
+          <article class="glass card reveal" data-delay="300">
+            <span class="card__num">08</span>
+            <div class="card__icon"><svg viewBox="0 0 32 32"><path d="M4 27h24M7 27V13l9-6 9 6v14"/><path d="M12 27v-6h8v6M16 7v6"/></svg></div>
+            <h3>CIS Returns</h3>
+            <p>Construction Industry Scheme monthly returns, subcontractor verifications and statements.</p>
+            <a href="#detail-cis-returns" class="card__link" data-detail="detail-cis-returns">Learn more <span>→</span></a>
+          </article>
+        </div>
+
+        <div class="details reveal" id="service-details">
+          <p class="eyebrow">Service details</p>
+          <details class="detail glass" id="detail-limited-company-accounts">
+            <summary><span class="detail__num">01</span><span class="detail__title">Limited Company Accounts &amp; CT600s</span><span class="detail__toggle" aria-hidden="true"></span></summary>
+            <div class="detail__body">
+              <!-- PRINCIPAL TO REPLACE: interim copy for Limited Company Accounts & CT600s -->
+              <div>
+                <h4>What's included</h4>
+                <p>Preparation of year-end statutory accounts under FRS 102 Section 1A or FRS 105, the CT600 corporation tax return and supporting computations, and iXBRL tagging. Filing to Companies House and HMRC within the statutory deadlines, with a clear summary of the figures before anything is submitted.</p>
+              </div>
+              <div>
+                <h4>Client benefit</h4>
+                <p>You meet both filing deadlines without chasing, understand your corporation tax position before it falls due, and start the next year with accounts that are reconciled and ready for lenders, investors or a future sale.</p>
+              </div>
+              <div>
+                <h4>What's outside scope</h4>
+                <p>Statutory audit, group consolidations, and R&amp;D tax credit claims are not included as standard. Where these are needed, they are quoted separately or referred to a specialist.</p>
+              </div>
+              <!-- END PRINCIPAL TO REPLACE -->
+              <a href="#contact" class="link-arrow">Discuss this service <span>→</span></a>
+            </div>
+          </details>
+          <details class="detail glass" id="detail-management-accounts">
+            <summary><span class="detail__num">02</span><span class="detail__title">Management Accounts &amp; Reporting</span><span class="detail__toggle" aria-hidden="true"></span></summary>
+            <div class="detail__body">
+              <!-- PRINCIPAL TO REPLACE: interim copy for Management Accounts & Reporting -->
+              <div>
+                <h4>What's included</h4>
+                <p>A monthly or quarterly pack covering profit and loss, balance sheet, cash position and the handful of KPIs that matter to your business, with short written commentary on what moved and why. Delivered to an agreed timetable after the month-end close.</p>
+              </div>
+              <div>
+                <h4>Client benefit</h4>
+                <p>Decisions are made on current numbers rather than last year's accounts. Trends, margin pressure and cash issues show up early enough to do something about them.</p>
+              </div>
+              <div>
+                <h4>What's outside scope</h4>
+                <p>Detailed budgeting models, board-pack design and investor reporting beyond the standard pack are scoped and agreed separately.</p>
+              </div>
+              <!-- END PRINCIPAL TO REPLACE -->
+              <a href="#contact" class="link-arrow">Discuss this service <span>→</span></a>
+            </div>
+          </details>
+          <details class="detail glass" id="detail-tax-compliance">
+            <summary><span class="detail__num">03</span><span class="detail__title">Tax Compliance &amp; Advisory</span><span class="detail__toggle" aria-hidden="true"></span></summary>
+            <div class="detail__body">
+              <!-- PRINCIPAL TO REPLACE: interim copy for Tax Compliance & Advisory -->
+              <div>
+                <h4>What's included</h4>
+                <p>Corporation tax, PAYE settlement considerations, dividend planning for owner-managed companies and a review of reliefs and allowances you may be entitled to claim. Deadlines are tracked and filings are prepared with a clear explanation of the position.</p>
+              </div>
+              <div>
+                <h4>Client benefit</h4>
+                <p>Fewer surprises at year end, a tax position you understand, and planning that is done before the year closes rather than after the opportunity has passed.</p>
+              </div>
+              <div>
+                <h4>What's outside scope</h4>
+                <p>Complex international structuring, trusts, inheritance tax planning and tax investigations are outside the standard service and are referred to or scoped with a specialist.</p>
+              </div>
+              <!-- END PRINCIPAL TO REPLACE -->
+              <a href="#contact" class="link-arrow">Discuss this service <span>→</span></a>
+            </div>
+          </details>
+          <details class="detail glass" id="detail-vat-bookkeeping">
+            <summary><span class="detail__num">04</span><span class="detail__title">VAT Bookkeeping</span><span class="detail__toggle" aria-hidden="true"></span></summary>
+            <div class="detail__body">
+              <!-- PRINCIPAL TO REPLACE: interim copy for VAT Bookkeeping -->
+              <div>
+                <h4>What's included</h4>
+                <p>Transaction coding with the correct VAT treatment, bank and supplier reconciliations, and quarterly VAT returns prepared and submitted through MTD-compatible software such as Xero or QuickBooks Online. Includes a review of partial exemption, reverse charge and scheme eligibility where relevant.</p>
+              </div>
+              <div>
+                <h4>Client benefit</h4>
+                <p>Returns are filed on time and reconcile to your books, VAT is not over- or under-claimed, and HMRC queries can be answered from records that are already in order.</p>
+              </div>
+              <div>
+                <h4>What's outside scope</h4>
+                <p>VAT registration applications, Option to Tax elections and customs or import agent work are handled as separate engagements.</p>
+              </div>
+              <!-- END PRINCIPAL TO REPLACE -->
+              <a href="#contact" class="link-arrow">Discuss this service <span>→</span></a>
+            </div>
+          </details>
+          <details class="detail glass" id="detail-personal-tax">
+            <summary><span class="detail__num">05</span><span class="detail__title">Personal Tax Returns</span><span class="detail__toggle" aria-hidden="true"></span></summary>
+            <div class="detail__body">
+              <!-- PRINCIPAL TO REPLACE: interim copy for Personal Tax Returns -->
+              <div>
+                <h4>What's included</h4>
+                <p>Preparation and filing of the Self Assessment return covering employment, dividends, rental income, self-employment and capital gains. Includes a reconciliation of payments on account and a clear statement of what is due and when.</p>
+              </div>
+              <div>
+                <h4>Client benefit</h4>
+                <p>The 31 January deadline is met without a last-minute scramble, allowable expenses and reliefs are claimed, and you know your liability months in advance.</p>
+              </div>
+              <div>
+                <h4>What's outside scope</h4>
+                <p>Non-UK resident and non-domicile matters, and returns involving complex share schemes or trusts, are scoped separately.</p>
+              </div>
+              <!-- END PRINCIPAL TO REPLACE -->
+              <a href="#contact" class="link-arrow">Discuss this service <span>→</span></a>
+            </div>
+          </details>
+          <details class="detail glass" id="detail-sole-trader-partnership-llp">
+            <summary><span class="detail__num">06</span><span class="detail__title">Sole Trader, Partnership &amp; LLP Accounts</span><span class="detail__toggle" aria-hidden="true"></span></summary>
+            <div class="detail__body">
+              <!-- PRINCIPAL TO REPLACE: interim copy for Sole Trader, Partnership & LLP Accounts -->
+              <div>
+                <h4>What's included</h4>
+                <p>Annual accounts for sole traders, partnerships and LLPs, the partnership return (SA800) and partners' individual returns where required, and LLP accounts filed at Companies House. Includes guidance on the basis period reform and cash versus accruals accounting.</p>
+              </div>
+              <div>
+                <h4>Client benefit</h4>
+                <p>Each partner's share of profit and tax is clear and agreed, filings are made on time, and the accounts support loan or mortgage applications when needed.</p>
+              </div>
+              <div>
+                <h4>What's outside scope</h4>
+                <p>Partnership agreements, profit-sharing disputes and incorporation advice are provided as separate advisory work.</p>
+              </div>
+              <!-- END PRINCIPAL TO REPLACE -->
+              <a href="#contact" class="link-arrow">Discuss this service <span>→</span></a>
+            </div>
+          </details>
+          <details class="detail glass" id="detail-data-migration">
+            <summary><span class="detail__num">07</span><span class="detail__title">Data Migration</span><span class="detail__toggle" aria-hidden="true"></span></summary>
+            <div class="detail__body">
+              <!-- PRINCIPAL TO REPLACE: interim copy for Data Migration -->
+              <div>
+                <h4>What's included</h4>
+                <p>A planned migration of your chart of accounts, customers, suppliers, open invoices and bills, bank feeds and historical balances to the new platform. Opening balances are reconciled to the closing trial balance of the old system and signed off before go-live.</p>
+              </div>
+              <div>
+                <h4>Client benefit</h4>
+                <p>No gap in your records, no duplicated or missing transactions, and a new system you can use from day one with confidence that the numbers agree.</p>
+              </div>
+              <div>
+                <h4>What's outside scope</h4>
+                <p>Custom integrations, app marketplace configuration and staff training beyond a handover session are quoted separately.</p>
+              </div>
+              <!-- END PRINCIPAL TO REPLACE -->
+              <a href="#contact" class="link-arrow">Discuss this service <span>→</span></a>
+            </div>
+          </details>
+          <details class="detail glass" id="detail-cis-returns">
+            <summary><span class="detail__num">08</span><span class="detail__title">CIS Returns</span><span class="detail__toggle" aria-hidden="true"></span></summary>
+            <div class="detail__body">
+              <!-- PRINCIPAL TO REPLACE: interim copy for CIS Returns -->
+              <div>
+                <h4>What's included</h4>
+                <p>Monthly CIS returns (CIS300) prepared and submitted to HMRC by the 19th, subcontractor verification, deduction statements issued to subcontractors, and reconciliation of CIS suffered for subcontractor companies claiming against PAYE.</p>
+              </div>
+              <div>
+                <h4>Client benefit</h4>
+                <p>Penalties for late or incorrect returns are avoided, subcontractors receive their statements on time, and deductions suffered are recovered promptly.</p>
+              </div>
+              <div>
+                <h4>What's outside scope</h4>
+                <p>Gross payment status applications, employment status disputes and payroll for directly employed staff are handled as separate engagements.</p>
+              </div>
+              <!-- END PRINCIPAL TO REPLACE -->
+              <a href="#contact" class="link-arrow">Discuss this service <span>→</span></a>
+            </div>
+          </details>
+        </div>
+
+        <div class="industries reveal">
+          <p class="eyebrow">Industries we work with</p>
+          <ul class="chips">
+            <li>Retail</li>
+            <li>Manufacturing</li>
+            <li>E-Commerce</li>
+            <li>Construction</li>
+            <li>Media</li>
+            <li>YouTube creators</li>
+            <li>Agencies</li>
+            <li>Software &amp; Tech</li>
+            <li>Hospitality</li>
+            <li>Finance</li>
+            <li>Non-profits</li>
+          </ul>
+          <p class="industries__note">Serving businesses across the United Kingdom.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ STATS ============================ -->
+    <section class="stats" id="stats">
+      <canvas class="scene" data-scene="silk" aria-hidden="true"></canvas>
+      <div class="container stats__grid">
+        <div class="stats__copy">
+          <p class="eyebrow reveal">Where we stand</p>
+          <h2 class="title reveal" data-delay="80">Built on experience,<br>not volume.</h2>
+          <p class="stats__note reveal" data-delay="140">Quantact Partners is a new firm led by an accountant with 6+ years of UK practice experience.</p>
+        </div>
+        <ul class="stats__list">
+          <li class="reveal" data-delay="0"><strong><span data-count="6">0</span>+</strong><span>Years of UK practice experience (principal)</span></li>
+          <li class="reveal" data-delay="100"><strong><span data-count="2">0</span></strong><span>Platform certifications (QuickBooks Online, Xero)</span></li>
+          <li class="reveal" data-delay="200"><strong><span data-count="24">0</span>h</strong><span>Enquiry response time</span></li>
+          <li class="reveal" data-delay="300"><strong>UK</strong><span>Focused · HMRC &amp; Companies House filings</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================ ABOUT ============================ -->
+    <section class="about" id="about">
+      <div class="about__media reveal">
+        <canvas class="scene" data-scene="office" aria-hidden="true"></canvas>
+        <img src="assets/img/umer-aijaz.jpg" alt="M. Umer Aijaz, principal of Quantact Partners" class="about__portrait" width="900" height="1200" loading="lazy">
+        <div class="about__media-frame" aria-hidden="true"><i></i><i></i><i></i></div>
+      </div>
+      <div class="about__body">
+        <div class="about__text">
+          <p class="eyebrow reveal">About Quantact</p>
+          <h2 class="title reveal" data-delay="80">A new firm, led by<br>an experienced accountant.</h2>
+          <div class="about__bio reveal" data-delay="160">
+            <p>I'm Umer, an accounting professional with over six years of experience working with UK businesses and accountancy practices. I specialise in year-end accounts, corporation tax compliance, bookkeeping and related accounting support, with extensive hands-on experience using Xero, QuickBooks Online, TaxCalc, etc.</p>
+            <p>Throughout my career, I've worked at senior accountant and team-lead level, managing assignments from initial records through to final accounts and tax preparation. I focus on accuracy, clear communication and meeting deadlines, so clients can have confidence that their accounting work is being handled properly.</p>
+            <p>I'm now bringing that experience directly to businesses and accountancy practices looking for dependable, flexible accounting and tax support.</p>
+          </div>
+          <div class="about__principal reveal" data-delay="200">
+            <span class="about__sig">M. Umer Aijaz</span>
+            <small>Principal, Quantact Partners</small>
+          </div>
+          <div class="about__software reveal" data-delay="220">
+            <span class="about__software-label">Software expertise</span>
+            <span>Xero · QuickBooks Online · TaxCalc</span>
+          </div>
+          <a href="#contact" class="btn btn--outline reveal" data-delay="240" data-magnetic>Discuss your accounting needs <span>→</span></a>
+        </div>
+        <div class="about__mono reveal" data-delay="200">
+          <span class="mono"><img src="assets/img/logo.png" alt="Quantact Partners"></span>
+          <ul>
+            <li>Clarity</li>
+            <li>Precision</li>
+            <li>Partnership</li>
+          </ul>
+          <div class="certs" aria-label="Certifications">
+            <span class="certs__label">Certifications</span>
+            <figure class="cert">
+              <img src="assets/img/badge-qbo.png" alt="QuickBooks Online Certified badge" width="320" height="320" loading="lazy">
+              <figcaption>QuickBooks Online Certified</figcaption>
+            </figure>
+            <figure class="cert">
+              <img src="assets/img/badge-xero.png" alt="Xero Certified badge" width="320" height="320" loading="lazy">
+              <figcaption>Xero Certified</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CALCULATORS ============================ -->
+    <section class="calculators section" id="calculators">
+      <div class="container">
+        <div class="section__head split">
+          <div>
+            <p class="eyebrow reveal">Calculators</p>
+            <h2 class="title reveal" data-delay="80">Quick estimates,<br>UK figures.</h2>
+          </div>
+          <div class="section__aside reveal" data-delay="160">
+            <p>Three simple tools for a first look at margins, break-even and VAT. Everything runs in your browser; nothing is stored or sent.</p>
+            <span class="badge">Estimates only — UK figures</span>
+          </div>
+        </div>
+
+        <div class="calc-grid">
+          <!-- Profit margin -->
+          <form class="calc glass reveal" id="calcMargin" novalidate>
+            <h3>Profit margin</h3>
+            <p class="calc__intro">Gross and net margin from revenue, cost of sales and operating expenses.</p>
+            <div class="field">
+              <label for="pm-revenue">Revenue (£)</label>
+              <input id="pm-revenue" name="revenue" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00" value="120000">
+            </div>
+            <div class="field">
+              <label for="pm-cogs">Cost of sales (£)</label>
+              <input id="pm-cogs" name="cogs" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00" value="48000">
+            </div>
+            <div class="field">
+              <label for="pm-opex">Operating expenses (£)</label>
+              <input id="pm-opex" name="opex" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00" value="36000">
+            </div>
+            <dl class="calc__out" aria-live="polite">
+              <div><dt>Gross profit</dt><dd data-out="gross">—</dd></div>
+              <div><dt>Gross margin</dt><dd data-out="grossPct">—</dd></div>
+              <div><dt>Net profit</dt><dd data-out="net">—</dd></div>
+              <div><dt>Net margin</dt><dd data-out="netPct">—</dd></div>
+            </dl>
+            <p class="calc__error" data-error hidden></p>
+            <details class="calc__formula">
+              <summary>Formula</summary>
+              <p>Gross margin = (Revenue − Cost of sales) ÷ Revenue × 100<br>Net margin = (Revenue − Cost of sales − Operating expenses) ÷ Revenue × 100</p>
+              <p>No statutory rate is used. Figures exclude VAT and corporation tax.</p>
+            </details>
+            <p class="calc__caveat">For guidance only. Confirm figures with your accountant before acting.</p>
+          </form>
+
+          <!-- Break-even -->
+          <form class="calc glass reveal" id="calcBreakEven" data-delay="100" novalidate>
+            <h3>Break-even</h3>
+            <p class="calc__intro">The revenue needed to cover fixed costs at your contribution margin.</p>
+            <div class="field">
+              <label for="be-fixed">Fixed costs per period (£)</label>
+              <input id="be-fixed" name="fixed" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00" value="60000">
+            </div>
+            <div class="field">
+              <label for="be-cm">Contribution margin (%)</label>
+              <input id="be-cm" name="cm" type="number" inputmode="decimal" min="0" max="100" step="0.1" placeholder="0" value="40">
+              <small class="field__hint">Contribution margin = (Price − Variable cost) ÷ Price × 100</small>
+            </div>
+            <div class="field">
+              <label for="be-price">Average selling price per unit (£) <span class="optional">optional</span></label>
+              <input id="be-price" name="price" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00">
+            </div>
+            <dl class="calc__out" aria-live="polite">
+              <div><dt>Break-even revenue</dt><dd data-out="revenue">—</dd></div>
+              <div><dt>Break-even units</dt><dd data-out="units">—</dd></div>
+            </dl>
+            <p class="calc__error" data-error hidden></p>
+            <details class="calc__formula">
+              <summary>Formula</summary>
+              <p>Break-even revenue = Fixed costs ÷ (Contribution margin % ÷ 100)<br>Break-even units = Break-even revenue ÷ Selling price per unit</p>
+              <p>No statutory rate is used.</p>
+            </details>
+            <p class="calc__caveat">For guidance only. Confirm figures with your accountant before acting.</p>
+          </form>
+
+          <!-- VAT -->
+          <form class="calc glass reveal" id="calcVat" data-delay="200" novalidate>
+            <h3>VAT</h3>
+            <p class="calc__intro">Add or remove VAT at the UK standard rate of <span data-vat-rate>20%</span>.</p>
+            <div class="field">
+              <label for="vat-amount">Amount (£)</label>
+              <input id="vat-amount" name="amount" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00" value="1000">
+            </div>
+            <fieldset class="field field--radios">
+              <legend>Direction</legend>
+              <label><input type="radio" name="mode" value="add" checked> Add VAT to a net amount</label>
+              <label><input type="radio" name="mode" value="remove"> Remove VAT from a gross amount</label>
+            </fieldset>
+            <dl class="calc__out" aria-live="polite">
+              <div><dt>Net (excl. VAT)</dt><dd data-out="net">—</dd></div>
+              <div><dt>VAT</dt><dd data-out="vat">—</dd></div>
+              <div><dt>Gross (incl. VAT)</dt><dd data-out="gross">—</dd></div>
+            </dl>
+            <p class="calc__error" data-error hidden></p>
+            <details class="calc__formula">
+              <summary>Formula</summary>
+              <p>Add VAT: Gross = Net × (1 + rate)<br>Remove VAT: Net = Gross ÷ (1 + rate)</p>
+              <p>Standard rate <span data-vat-rate>20%</span>, effective from <span data-vat-date>4 January 2011</span>. Reduced and zero rates are not applied by this tool.</p>
+            </details>
+            <p class="calc__caveat">For guidance only. Confirm figures with your accountant before acting.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CASE STUDIES ============================ -->
+    <section class="insights section" id="case-studies">
+      <div class="container">
+        <div class="section__head split">
+          <div>
+            <p class="eyebrow reveal">Case Studies</p>
+            <h2 class="title reveal" data-delay="80">Real problems.<br>Worked through properly.</h2>
+          </div>
+          <div class="section__aside reveal" data-delay="160">
+            <p>UK accounting, tax and VAT case studies for accounting firm owners and business owners. One new case study each month.</p>
+            <a href="case-studies/" class="link-arrow">All case studies <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="posts posts--home" id="homePosts" data-feed="case-studies/index.json">
+          <article class="post glass reveal" data-delay="0" data-category="vat">
+            <a href="case-studies/ecommerce-vat-treatment-book-sales/" class="post__wrap">
+              <div class="post__media"><img src="assets/img/case-ecommerce-vat.jpg" alt="Stacked printed books beside a laptop showing an online store, in muted teal tones" width="1200" height="800" loading="lazy"><span class="tag">VAT</span></div>
+              <div class="post__body">
+                <h3>E-commerce accounting case study: VAT treatment of book sales</h3>
+                <p class="post__excerpt">How an online bookseller's VAT coding was corrected across printed books, e-books, audiobooks, bundles, delivery charges and marketplace fees, and what other UK e-commerce sellers can take from it.</p>
+                <div class="post__meta"><span>Quantact Partners</span><span><time datetime="2026-10-01">1 October 2026</time></span><span>7 min read</span><i aria-hidden="true">→</i></div>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CTA / CONTACT ============================ -->
+    <section class="cta section" id="contact">
+      <div class="container">
+        <div class="cta__panel glass reveal">
+          <canvas class="scene" data-scene="smoke" aria-hidden="true"></canvas>
+          <div class="cta__content cta__content--form">
+            <div class="cta__copy">
+              <p class="eyebrow">Let's talk</p>
+              <h2 class="title">Your goals. Our expertise.</h2>
+              <p class="lead">Book a free 30-minute consultation call with M. Umer Aijaz. We'll talk through where you are, what you need, and how we would handle it. Pricing is agreed after the call.</p>
+              <ul class="cta__facts">
+                <li>Free 30-minute consultation call</li>
+                <li>We reply within 24 hours</li>
+                <li>Monday to Friday, 9am–5pm UK time</li>
+              </ul>
+              <div class="cta__contacts">
+                <a href="mailto:mumeraijaz.writer@gmail.com">mumeraijaz.writer@gmail.com</a>
+                <a href="tel:+923364402552">+92 336 4402552</a>
+              </div>
+              <div class="cta__actions">
+                <a href="tel:+923364402552" class="btn btn--solid" data-magnetic>Call +92 336 4402552 <span>→</span></a>
+              </div>
+            </div>
+
+            <form class="enquiry glass" id="enquiryForm" name="enquiry" method="POST" action="api/contact.php" novalidate>
+              <p class="enquiry__hp"><label>Leave this field empty <input name="website" tabindex="-1" autocomplete="off"></label></p>
+              <h3>Discuss your accounting needs</h3>
+              <div class="enquiry__grid">
+                <div class="field">
+                  <label for="eq-name">Name</label>
+                  <input id="eq-name" name="name" type="text" autocomplete="name" maxlength="80" required>
+                </div>
+                <div class="field">
+                  <label for="eq-email">Business email</label>
+                  <input id="eq-email" name="email" type="email" autocomplete="email" maxlength="120" inputmode="email" required>
+                </div>
+                <div class="field">
+                  <label for="eq-company">Company <span class="optional">optional</span></label>
+                  <input id="eq-company" name="company" type="text" autocomplete="organization" maxlength="120">
+                </div>
+                <div class="field">
+                  <label for="eq-service">Service interest</label>
+                  <select id="eq-service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option>Limited Company Accounts &amp; CT600s</option>
+                    <option>Management Accounts &amp; Reporting</option>
+                    <option>Tax Compliance &amp; Advisory</option>
+                    <option>VAT Bookkeeping</option>
+                    <option>Personal Tax Returns</option>
+                    <option>Sole Trader, Partnership &amp; LLP Accounts</option>
+                    <option>Data Migration</option>
+                    <option>CIS Returns</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+                <div class="field field--full">
+                  <label for="eq-message">Message</label>
+                  <textarea id="eq-message" name="message" rows="4" maxlength="2000" required placeholder="A few lines about your business and what you need help with. Please don't include financial documents or account details."></textarea>
+                </div>
+                <div class="field field--full field--check">
+                  <label>
+                    <input type="checkbox" name="consent" value="yes" required>
+                    <span>I agree to Quantact Partners storing and using the details above to respond to my enquiry, in line with the <a href="privacy.html">Privacy Policy</a>. I can withdraw consent at any time by emailing mumeraijaz.writer@gmail.com.</span>
+                  </label>
+                </div>
+              </div>
+              <p class="enquiry__status" id="enquiryStatus" role="status" aria-live="polite"></p>
+              <button type="submit" class="btn btn--outline">Send enquiry <span>→</span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#top" class="brand">
+            <img src="assets/img/logo.png" alt="" class="brand__mark">
+            <span class="brand__text">
+              <span class="brand__name">Quantact</span>
+              <span class="brand__sub">Partners</span>
+            </span>
+          </a>
+          <p>UK accounting, tax &amp; VAT for growing businesses.<br>Led by M. Umer Aijaz.</p>
+        </div>
+        <div class="footer__col">
+          <h3>Navigation</h3>
+          <a href="#top">Home</a>
+          <a href="#services">Services</a>
+          <a href="#calculators">Calculators</a>
+          <a href="case-studies/">Case Studies</a>
+          <a href="#about">About</a>
+        </div>
+        <div class="footer__col">
+          <h3>Services</h3>
+          <a href="#detail-limited-company-accounts" data-detail="detail-limited-company-accounts">Limited Company Accounts &amp; CT600s</a>
+          <a href="#detail-management-accounts" data-detail="detail-management-accounts">Management Accounts &amp; Reporting</a>
+          <a href="#detail-tax-compliance" data-detail="detail-tax-compliance">Tax Compliance &amp; Advisory</a>
+          <a href="#detail-vat-bookkeeping" data-detail="detail-vat-bookkeeping">VAT Bookkeeping</a>
+          <a href="#detail-personal-tax" data-detail="detail-personal-tax">Personal Tax Returns</a>
+          <a href="#detail-sole-trader-partnership-llp" data-detail="detail-sole-trader-partnership-llp">Sole Trader, Partnership &amp; LLP Accounts</a>
+          <a href="#detail-data-migration" data-detail="detail-data-migration">Data Migration</a>
+          <a href="#detail-cis-returns" data-detail="detail-cis-returns">CIS Returns</a>
+        </div>
+        <div class="footer__col">
+          <h3>Contact</h3>
+          <a href="mailto:mumeraijaz.writer@gmail.com">mumeraijaz.writer@gmail.com</a>
+          <a href="tel:+923364402552">+92 336 4402552</a>
+          <span>Monday to Friday, 9am–5pm UK time</span>
+          <span>We reply within 24 hours</span>
+          <div class="footer__social">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg></a>
+          </div>
+        </div>
+        <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M5 9h14M5 14h14"/></svg></button>
+      </div>
+      <div class="footer__legal">
+        <p>Quantact Partners is a UK accounting practice led by M. Umer Aijaz. We process personal data in accordance with UK GDPR and the Data Protection Act 2018. Information on this site is general guidance, not advice.</p>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Quantact Partners. All rights reserved.</span>
+        <div><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Website Disclaimer</a><a href="disclaimer.html">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="assets/js/scene.js"></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
