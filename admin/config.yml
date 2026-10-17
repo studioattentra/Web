@@ -1,0 +1,104 @@
+# Decap CMS configuration — Quantact Partners case studies
+#
+# Login: https://<your-domain>/admin/ → "Login with GitHub". The owner's GitHub
+# account must have write access to the repository. The sign-in goes through
+# the site's own relay (admin/oauth/*.php on Hostinger), which holds the
+# GitHub OAuth App secret in private/site-config.php. Each save commits a
+# Markdown file to the repository; GitHub Actions rebuilds and Hostinger pulls.
+
+backend:
+  name: github
+  repo: studioattentra/Quantact-Partners-
+  branch: main
+  base_url: https://www.quantactpartners.co.uk   # change to the live domain (no trailing slash)
+  auth_endpoint: admin/oauth/auth.php
+  commit_messages:
+    create: "Case study: add {{slug}}"
+    update: "Case study: update {{slug}}"
+    delete: "Case study: remove {{slug}}"
+    uploadMedia: "Media: upload {{path}}"
+    deleteMedia: "Media: remove {{path}}"
+
+# Drafts → In review → Ready → Publish. Drafts never appear on the site.
+publish_mode: editorial_workflow
+
+site_url: https://www.quantactpartners.co.uk   # change to the live domain if it differs
+display_url: https://www.quantactpartners.co.uk
+logo_url: /assets/img/logo.png
+locale: en
+
+media_folder: assets/img/case-studies
+public_folder: /assets/img/case-studies
+
+slug:
+  encoding: unicode
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  - name: case_studies
+    label: Case Studies
+    label_singular: Case Study
+    folder: content/case-studies
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "case-studies/{{fields.slug}}/"
+    summary: "{{title}} — {{category}} — {{date | date('DD MMM YYYY')}}"
+    sortable_fields: [date, title, category]
+    view_filters:
+      - label: Published
+        field: published
+        pattern: true
+      - label: Unpublished
+        field: published
+        pattern: false
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: title, widget: string, hint: "Clear and specific. Shown as the page heading." }
+      - { label: "URL slug", name: slug, widget: string, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', "Lower-case letters, numbers and hyphens only"], hint: "Forms the address: /case-studies/<slug>/" }
+      - { label: "Short excerpt", name: excerpt, widget: text, hint: "One or two sentences shown on cards and the listing page." }
+      - { label: "Category", name: category, widget: select, options: ["VAT", "Tax Planning", "Accounts", "Bookkeeping", "Payroll & CIS", "Software"], default: "VAT" }
+      - { label: "Tags", name: tags, widget: list, required: false, hint: "Press Enter after each tag." }
+      - { label: "Author", name: author, widget: string, default: "Quantact Partners", hint: "Always the firm name." }
+      - { label: "Publish date", name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, picker_utc: true, hint: "Set a future date to schedule. The post goes live on that day." }
+      - { label: "Updated date", name: updated, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, picker_utc: true, required: false }
+      - { label: "Published", name: published, widget: boolean, default: false, hint: "Off = unpublished (hidden from the site even if the date has passed)." }
+      - { label: "Featured image", name: image, widget: image, hint: "Landscape, at least 1200×800. Palette-friendly images work best." }
+      - { label: "Featured image alt text", name: image_alt, widget: string, hint: "Describe the image for screen readers." }
+      - { label: "SEO title", name: seo_title, widget: string, required: false, hint: "Up to ~60 characters. Defaults to the title." }
+      - { label: "SEO description", name: seo_description, widget: text, required: false, hint: "Up to ~155 characters. Defaults to the excerpt." }
+      - { label: "Jurisdiction", name: jurisdiction, widget: string, default: "United Kingdom" }
+      - { label: "Tax year", name: tax_year, widget: string, required: false, hint: "e.g. 2026/27" }
+      - { label: "Effective date of rules used", name: effective_date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, picker_utc: true, required: false }
+      - { label: "Review date", name: review_date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, picker_utc: true, required: false, hint: "When the content should be checked against current rules." }
+      - { label: "Reading time (minutes)", name: reading_time, widget: number, value_type: int, min: 1, max: 60, default: 5 }
+      - label: "Official source links"
+        name: sources
+        widget: list
+        required: false
+        summary: "{{fields.label}}"
+        fields:
+          - { label: "Label", name: label, widget: string }
+          - { label: "URL", name: url, widget: string, pattern: ['^https?://', "Must start with http:// or https://"] }
+      - { label: "Assumptions", name: assumptions, widget: list, required: false, hint: "One per line. Press Enter after each." }
+      - { label: "Caveats", name: caveats, widget: list, required: false }
+      - label: "Related service"
+        name: related_service
+        widget: select
+        options:
+          - { label: "Limited Company Accounts & CT600s", value: limited-company-accounts }
+          - { label: "Management Accounts & Reporting", value: management-accounts }
+          - { label: "Tax Compliance & Advisory", value: tax-compliance }
+          - { label: "VAT Bookkeeping", value: vat-bookkeeping }
+          - { label: "Personal Tax Returns", value: personal-tax }
+          - { label: "Sole Trader, Partnership & LLP Accounts", value: sole-trader-partnership-llp }
+          - { label: "Data Migration", value: data-migration }
+          - { label: "CIS Returns", value: cis-returns }
+        default: vat-bookkeeping
+      - { label: "Related service title", name: related_service_title, widget: string, default: "VAT Bookkeeping", hint: "Shown as the link text in the sidebar." }
+      - { label: "Call-to-action text", name: cta_text, widget: string, default: "Discuss your accounting needs" }
+      - { label: "Article body", name: body, widget: markdown, hint: "Use ## for section headings. Keep figures in GBP." }

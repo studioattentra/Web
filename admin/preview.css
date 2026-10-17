@@ -1,0 +1,4 @@
+/* Preview pane inside the content admin */
+body { background: #0e1312; }
+.preview { padding: 40px 0; }
+.preview .article__hero { padding-top: 0; }
